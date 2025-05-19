@@ -1,0 +1,48 @@
+package methods;
+import java.util.Scanner;
+
+public class calculator {
+	public static void main(String[] args) {
+		calculator calculator = new calculator();
+        calculator.runCalculator();
+	}
+	public void runCalculator() {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("enter number 1");
+		double num1 = scanner.nextDouble();
+		
+		System.out.println("enter operator(+,-,*,/):");
+		char operator = scanner.next().charAt(0);
+		
+		System.out.println("enter number 2");
+		double num2 = scanner.nextDouble();
+		
+		double result = 0;
+		
+		switch(operator) {
+		case '+':
+			result = num1 + num2;
+			break;
+		case'-':
+			result = num1 - num2;
+			break;
+		case '*':
+			result = num1 * num2;
+			break;
+		case '/':
+			if(num2 != 0) {
+				result = num1/num2;
+			}else {
+				System.out.println("error not dividble by 0");
+				return;
+			}
+		break;
+	default:
+		System.out.println("error invaild input");
+		}
+		System.out.println("result: " + result);
+		scanner.close();
+	}
+
+}
